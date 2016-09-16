@@ -79,8 +79,11 @@ load_default_config() {
   CONFIG_mysql_dump_latest_clean_filenames='no'
   CONFIG_mysql_dump_max_allowed_packet=''
   CONFIG_mysql_dump_single_transaction='no'
+  CONFIG_mysql_dump_events='no'
+  CONFIG_mysql_dump_routines='no'
+  CONFIG_mysql_dump_triggers='no'
   CONFIG_mysql_dump_master_data=
-  CONFIG_mysql_dump_full_schema='yes'
+  CONFIG_mysql_dump_full_schema='no'
   CONFIG_mysql_dump_dbstatus='yes'
   CONFIG_mysql_dump_differential='no'
   CONFIG_backup_local_files=()
@@ -458,6 +461,18 @@ parse_configuration () {
     [[ "${CONFIG_mysql_dump_single_transaction}" = "yes" ]]	&& {
 	  opt=( "${opt[@]}" '--single-transaction' )
 	  opt_fullschema=( "${opt_fullschema[@]}" '--single-transaction' )
+    }
+    [[ "${CONFIG_mysql_dump_events}" = "yes" ]]	&& {
+	  opt=( "${opt[@]}" '--events' )
+	  opt_fullschema=( "${opt_fullschema[@]}" '--events' )
+    }
+    [[ "${CONFIG_mysql_dump_routines}" = "yes" ]]	&& {
+	  opt=( "${opt[@]}" '--routines' )
+	  opt_fullschema=( "${opt_fullschema[@]}" '--routines' )
+    }
+    [[ "${CONFIG_mysql_dump_triggers}" = "yes" ]]	&& {
+	  opt=( "${opt[@]}" '--triggers' )
+	  opt_fullschema=( "${opt_fullschema[@]}" '--triggers' )
     }
     [[ "${CONFIG_mysql_dump_commcomp}" = "yes" ]]		&& {
 	  opt=( "${opt[@]}" '--compress' )

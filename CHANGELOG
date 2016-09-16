@@ -1,7 +1,13 @@
 #=====================================================================
 # Change Log
 #=====================================================================
-#
+
+2016-09-16: added CONFIG_mysql_dump_events   (default: 'no'),
+                  CONFIG_mysql_dump_routines (default: 'no'),
+                  CONFIG_mysql_dump_triggers (default: 'no'),
+            changed default for CONFIG_mysql_dump_full_schema to 'no'.
+
+# (previous entries from original project)
 # version 3.0_rc4 - (2011-11-24)
 #     - Removing mkfifo commands, thereby improving portability.
 #     - Fixing not working table exclude feature for wildcards.

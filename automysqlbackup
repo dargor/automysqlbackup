@@ -2000,6 +2000,10 @@ method_backup () {
 	fi
 	# <- postbackup commands
 
+	# fix mysql braindeadness
+	grep -v "^Warning: Using a password on the command line interface can be insecure.$" "$log_errfile" > "$log_errfile.tmp"
+	mv "$log_errfile.tmp" "$log_errfile"
+
 	if [[ -s "$log_errfile" ]];then status=1; else status=0; fi
 
 	exit ${status}

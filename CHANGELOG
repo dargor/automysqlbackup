@@ -2,6 +2,11 @@
 # Change Log
 #=====================================================================
 
+2017-11-13: add 'sys' database to default ignored databases.
+            also, release v3.1.0 since I use this in production for some time now.
+
+2017-05-30: nuke a mysql 5.6 warning about using passwords via the CLI.
+
 2016-09-16: added CONFIG_mysql_dump_events   (default: 'no'),
                   CONFIG_mysql_dump_routines (default: 'no'),
                   CONFIG_mysql_dump_triggers (default: 'no'),

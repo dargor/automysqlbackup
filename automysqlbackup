@@ -89,7 +89,7 @@ load_default_config() {
   CONFIG_backup_local_files=()
   CONFIG_db_names=()
   CONFIG_db_month_names=()
-  CONFIG_db_exclude=( 'information_schema' 'performance_schema' )
+  CONFIG_db_exclude=( 'information_schema' 'performance_schema' 'sys' )
   CONFIG_table_exclude=()
   CONFIG_mailcontent='stdout'
   CONFIG_mail_maxattsize=4000
